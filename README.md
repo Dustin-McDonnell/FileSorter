@@ -7,6 +7,7 @@ File Auto Sorter (Name is a WIP)
 Introduction
 ----------------------------------------
 -File Auto Sorter serves as a helpful utility tool that moves files quickly and in bulk to/from folders of your choice.
+-To use, download the Exe folder, it contains the exe and a config file already exists, though it is not required by default.
 
 Features
 ----------------------------------------
