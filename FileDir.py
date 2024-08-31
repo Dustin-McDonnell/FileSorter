@@ -81,7 +81,6 @@ def list_dir(dir_name):
 # Move files with a .jpg extension to the specified path.
 def move_files(paths):
     src_files = list_dir(paths['src'])
-
     extensions = {
         '.jpg': paths['jpg'],
         '.png': paths['png'],
@@ -94,10 +93,13 @@ def move_files(paths):
         '.webp': paths['webp']
     }
 
+    # Accounts for duplicates
     for file in src_files:
         for ext, dest in extensions.items():
             if file.endswith(ext):
-                shutil.move(file, dest)
+                dst_file = os.path.join(dest, os.path.basename(file))
+                if not os.path.exists(dst_file):
+                    shutil.move(file, dest)
                 break
 
 
