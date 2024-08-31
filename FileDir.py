@@ -1,9 +1,9 @@
 import os
 import shutil
 import tkinter
-from tkinter import filedialog
-from tkinter import ttk
+from tkinter import *
 import json
+from tkinter import ttk, filedialog
 
 CONFIG_FILE = 'config.json'
 
@@ -57,6 +57,7 @@ def create_buttons(frm, paths):
 def user_interface():
     root = tkinter.Tk()
     frm = ttk.Frame(root, padding=10)
+    root.title('File Auto Sorter')
     paths = load_paths()
     frm.grid()
     ttk.Button(frm, text="Source", command=lambda: save_paths("src", paths)).grid(column=1, row=0)
